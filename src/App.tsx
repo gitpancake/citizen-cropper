@@ -52,9 +52,9 @@ const CitizenCropper = () => {
         </small>
         <br />
         <small>
-          sauce:
+          sauce:{" "}
           <a href="https://github.com/gitpancake/citizen-cropper" style={{ textDecoration: "none", color: "grey" }}>
-            gitpancake
+            github
           </a>
         </small>
       </div>
