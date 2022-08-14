@@ -3,6 +3,7 @@ import "./App.css";
 
 const CitizenCropper = () => {
   const [imageUrl, setImageUrl] = useState<string>("https://crypto-citizens-mainnet.s3.amazonaws.com/4000028.png");
+  const [hidden, setHidden] = useState<boolean>(true);
 
   const handleCitizenChange = () => {
     draw();
@@ -33,6 +34,7 @@ const CitizenCropper = () => {
 
     // Draw slice
     ctx.drawImage(img, sourceX, sourceY, sourceWidth, sourceHeight, 0, 0, 600, 600);
+    setHidden(false);
   }, [imageUrl]);
 
   useEffect(() => {
@@ -64,10 +66,11 @@ const CitizenCropper = () => {
 
         <button onClick={() => handleCitizenChange()}>Update</button>
       </div>
-
-      <div className="canvas">
-        <canvas id="canvas" width="600" height="600"></canvas>
-      </div>
+      {!hidden && (
+        <div className="canvas">
+          <canvas id="canvas" width="600" height="600"></canvas>
+        </div>
+      )}
     </div>
   );
 };
