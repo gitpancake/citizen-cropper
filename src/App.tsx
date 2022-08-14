@@ -1,4 +1,5 @@
 import { useEffect, useState, useCallback } from "react";
+import "./App.css";
 
 const CitizenCropper = () => {
   const [imageUrl, setImageUrl] = useState<string>("https://crypto-citizens-mainnet.s3.amazonaws.com/4000028.png");
@@ -64,7 +65,7 @@ const CitizenCropper = () => {
         <button onClick={() => handleCitizenChange()}>Update</button>
       </div>
 
-      <div>
+      <div className="canvas">
         <canvas id="canvas" width="600" height="600"></canvas>
       </div>
     </div>
