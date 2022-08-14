@@ -7,6 +7,7 @@ const CitizenCropper = () => {
 
   const handleCitizenChange = () => {
     draw();
+    setHidden(false);
   };
 
   const draw = useCallback(() => {
