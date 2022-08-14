@@ -54,7 +54,7 @@ const CitizenCropper = () => {
         <br />
         <small>
           sauce:
-          <a href="https://www.github.com/gitpancake" style={{ textDecoration: "none", color: "grey" }}>
+          <a href="https://github.com/gitpancake/citizen-cropper" style={{ textDecoration: "none", color: "grey" }}>
             gitpancake
           </a>
         </small>
