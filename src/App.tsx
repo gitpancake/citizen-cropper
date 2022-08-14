@@ -3,41 +3,40 @@ import { useEffect, useState } from "react";
 const CitizenCropper = () => {
   const [imageUrl, setImageUrl] = useState<string>("https://crypto-citizens-mainnet.s3.amazonaws.com/4000028.png");
 
-  const draw = () => {
-    var img = new Image();
-    img.src = imageUrl;
-
-    const canvas = document.getElementById("canvas") as HTMLCanvasElement;
-
-    if (!canvas) {
-      console.error("[ERROR] Unable to find canvas element");
-      return;
-    }
-
-    const ctx = canvas.getContext("2d");
-
-    if (!ctx) {
-      console.error("[ERROR] Unable to find canvas context");
-      return;
-    }
-
-    const sourceX = 700;
-    const sourceY = 100;
-    const sourceWidth = 1000;
-    const sourceHeight = 1000;
-
-    // Draw slice
-    ctx.drawImage(img, sourceX, sourceY, sourceWidth, sourceHeight, 0, 0, 600, 600);
-  };
-
   const handleCitizenChange = () => {
     setImageUrl(imageUrl);
-    draw();
   };
 
   useEffect(() => {
+    const draw = () => {
+      var img = new Image();
+      img.src = imageUrl;
+
+      const canvas = document.getElementById("canvas") as HTMLCanvasElement;
+
+      if (!canvas) {
+        console.error("[ERROR] Unable to find canvas element");
+        return;
+      }
+
+      const ctx = canvas.getContext("2d");
+
+      if (!ctx) {
+        console.error("[ERROR] Unable to find canvas context");
+        return;
+      }
+
+      const sourceX = 700;
+      const sourceY = 100;
+      const sourceWidth = 1000;
+      const sourceHeight = 1000;
+
+      // Draw slice
+      ctx.drawImage(img, sourceX, sourceY, sourceWidth, sourceHeight, 0, 0, 600, 600);
+    };
+
     draw();
-  }, []);
+  }, [imageUrl]);
 
   return (
     <div style={{ display: "flex", justifyContent: "center", flexDirection: "column", alignItems: "center" }}>
