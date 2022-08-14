@@ -26,7 +26,7 @@ const CitizenCropper = () => {
     }
 
     const sourceX = 700;
-    const sourceY = 100;
+    const sourceY = 50;
     const sourceWidth = 1000;
     const sourceHeight = 1000;
 
